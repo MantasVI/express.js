@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-100 h-screen flex">
+    <!-- sidebar -->
+    <div class="w-64 bg-white border-r border-gray-200 flex flex-col">
+      <div
+        class="p-4 border-b border-gray-200 flex justify-between items-center"
+      >
+        <h1 class="font-medium text-gray-800">My notes</h1>
+        <button class="add text-xl text-gray-500 hover:text-gray-800">+</button>
+      </div>
+    </div>
+
+    <!-- editor -->
+    <div class="flex-1 flex flex-col"></div>
+  </body>
+</html>
+<script src="./frontend.js"></script>
