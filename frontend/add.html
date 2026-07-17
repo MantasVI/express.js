@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <form class="add">
+      <input name="title" placeholder="title" />
+      <p>---------</p>
+      <textarea name="content" placeholder="content"></textarea>
+      <button class="submit" type="submit">create</button>
+    </form>
+  </body>
+</html>
+<script>
+  const form = document.querySelector(".add");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // stop native page reload
+    const title = e.target.title.value;
+    const content = e.target.content.value; // matches schema, and textarea's name
+
+    await fetch("/notes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title, content }),
+    });
+    window.location.href = "/";
+  });
+</script>
